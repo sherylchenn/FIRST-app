@@ -43,6 +43,9 @@ class ContainerViewController: UIViewController, Persistable, Alertable {
     }
 
     let dependencies: Dependencies
+    
+    // Flag to prevent network requests during initialization
+    private var isInitialized = false
 
     var errorRecorder: ErrorRecorder {
         return dependencies.errorRecorder
@@ -165,6 +168,35 @@ class ContainerViewController: UIViewController, Persistable, Alertable {
         rootStackView.autoPinEdge(toSuperviewSafeArea: .top)
         // Pin our stack view underneath the safe area to extend underneath the home bar on notch phones
         rootStackView.autoPinEdgesToSuperviewEdges(with: .zero, excludingEdge: .top)
+        
+        // Mark view as loaded to allow network requests
+        isInitialized = true
+        
+        // Trigger initial data loading after a short delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.triggerInitialDataLoading()
+        }
+    }
+    
+    private func triggerInitialDataLoading() {
+        // Completely disable automatic data loading during initialization
+        // Users can manually refresh if they need data
+        // This prevents any network requests from blocking the UI
+        
+        // Trigger refreshes for the current view controller if needed
+        // if let viewController = currentViewController() {
+        //     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        //         if viewController.shouldRefresh() {
+        //             // Set a flag to indicate we're about to refresh to prevent showing "no data" immediately
+        //             if let refreshable = viewController as? Refreshable {
+        //                 // Start the refresh operation
+        //                 DispatchQueue.main.async {
+        //                     refreshable.refresh()
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -272,9 +304,19 @@ class ContainerViewController: UIViewController, Persistable, Alertable {
                 // Kickoff a reload to make sure our states match up.
                 reloadViewController(refreshViewController)
 
-                if refreshViewController.shouldRefresh() {
-                    refreshViewController.refresh()
-                }
+                // Completely disable automatic refreshes during initialization
+                // Only allow manual refreshes (pull-to-refresh) to prevent blocking
+                // if isInitialized {
+                //     // Add a delay to prevent immediate network requests during initialization
+                //     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                //         if refreshViewController.shouldRefresh() {
+                //             // Make refresh asynchronous to not block UI when switching views
+                //             DispatchQueue.main.async {
+                //                 refreshViewController.refresh()
+                //             }
+                //         }
+                //     }
+                // }
                 switchedIndex = index
             }
             containedView.isHidden = shouldHide

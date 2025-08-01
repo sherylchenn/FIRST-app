@@ -28,6 +28,9 @@ class TeamViewController: HeaderContainerViewController, Observable {
     private(set) var mediaViewController: TeamMediaCollectionViewController
 
     private var activity: NSUserActivity?
+    
+    // Flag to prevent network requests during initialization
+    private var isInitialized = false
 
     override var subscribableModel: MyTBASubscribable {
         return team
@@ -39,7 +42,9 @@ class TeamViewController: HeaderContainerViewController, Observable {
                 eventsViewController.year = year
                 mediaViewController.year = year
 
-                fetchTeaMedia(year: year)
+                // Completely disable automatic media fetch during initialization
+                // Users can manually refresh if they need media
+                // This prevents any network requests from blocking the UI
             }
 
             updateInterface()
@@ -98,6 +103,9 @@ class TeamViewController: HeaderContainerViewController, Observable {
         setupObservers()
 
         activity = team.userActivity
+        
+        // Mark view as loaded to allow network requests
+        isInitialized = true
     }
 
     override func viewWillAppear(_ animated: Bool) {

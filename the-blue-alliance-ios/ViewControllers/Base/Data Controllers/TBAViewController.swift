@@ -122,6 +122,13 @@ extension Refreshable where Self: TBAViewController & Stateful {
     }
 
     func noDataReload() {
+        // Don't show "no data" immediately if we haven't successfully refreshed yet
+        // This prevents the flash of "no data" before the first refresh completes
+        if !hasSuccessfullyRefreshed {
+            // We haven't refreshed yet, so don't show "no data" - wait for the refresh to complete
+            return
+        }
+        
         if isDataSourceEmpty {
             showNoDataView()
         } else {

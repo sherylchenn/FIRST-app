@@ -109,7 +109,10 @@ class EventsViewController: TBATableViewController, Refreshable, Stateful, Event
         fetchedResultsController.reconfigureFetchRequest(setupFetchRequest(_:))
 
         if shouldRefresh() {
-            refresh()
+            // Make refresh asynchronous to not block UI initialization
+            DispatchQueue.main.async { [weak self] in
+                self?.refresh()
+            }
         }
     }
 
