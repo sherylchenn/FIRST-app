@@ -8,16 +8,24 @@ import UIKit
 class GrantsContainerViewController: ContainerViewController {
     
     private let urlOpener: URLOpener
-    private let dependencies: Dependencies
     
     private var grantsViewController: GrantsViewController!
     
     // MARK: - Init
     init(urlOpener: URLOpener, dependencies: Dependencies) {
         self.urlOpener = urlOpener
-        self.dependencies = dependencies
         
-        super.init(nibName: nil, bundle: nil)
+        // Create the grants view controller first
+        let grantsVC = GrantsViewController(dependencies: dependencies)
+        
+        // Call super.init with the proper parameters
+        super.init(viewControllers: [grantsVC], 
+                  navigationTitle: "Grants", 
+                  dependencies: dependencies)
+        
+        // Store reference to the grants view controller
+        self.grantsViewController = grantsVC
+        self.grantsViewController.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,27 +37,6 @@ class GrantsContainerViewController: ContainerViewController {
         super.viewDidLoad()
         
         title = "Grants"
-        
-        setupGrantsViewController()
-    }
-    
-    // MARK: - Setup
-    private func setupGrantsViewController() {
-        grantsViewController = GrantsViewController(dependencies: dependencies)
-        grantsViewController.delegate = self
-        
-        addChild(grantsViewController)
-        view.addSubview(grantsViewController.view)
-        grantsViewController.didMove(toParent: self)
-        
-        // Set up constraints
-        grantsViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            grantsViewController.view.topAnchor.constraint(equalTo: view.topAnchor),
-            grantsViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            grantsViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            grantsViewController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
 }
 

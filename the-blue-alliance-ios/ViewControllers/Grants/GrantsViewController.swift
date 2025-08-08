@@ -49,6 +49,10 @@ class GrantsViewController: TBATableViewController {
         tableView.registerReusableCell(GrantTableViewCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
+        
+        // Ensure delegate is set
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     private func setupNavigationBar() {
@@ -100,7 +104,10 @@ class GrantsViewController: TBATableViewController {
             return true
         }
         
-        tableView.reloadData()
+        // Use main queue for UI updates
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -113,9 +120,19 @@ class GrantsViewController: TBATableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Add bounds checking
+        guard indexPath.row < filteredGrants.count else {
+            return UITableViewCell()
+        }
+        
         let cell = tableView.dequeueReusableCell(indexPath: indexPath) as GrantTableViewCell
         let grant = filteredGrants[indexPath.row]
-        cell.viewModel = GrantCellViewModel(grant: grant)
+        
+        // Configure cell on main queue
+        DispatchQueue.main.async {
+            cell.viewModel = GrantCellViewModel(grant: grant)
+        }
+        
         return cell
     }
     
@@ -123,8 +140,41 @@ class GrantsViewController: TBATableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // Add bounds checking
+        guard indexPath.row < filteredGrants.count else {
+            return
+        }
+        
         let grant = filteredGrants[indexPath.row]
         delegate?.grantSelected(grant)
+    }
+}
+
+// MARK: - Refreshable
+extension GrantsViewController: Refreshable {
+    
+    var refreshKey: String? {
+        return nil
+    }
+    
+    var automaticRefreshInterval: DateComponents? {
+        return nil
+    }
+    
+    var automaticRefreshEndDate: Date? {
+        return nil
+    }
+    
+    var isDataSourceEmpty: Bool {
+        return filteredGrants.isEmpty
+    }
+    
+    func refresh() {
+        // For now, just reload the data
+        // In a real implementation, this would fetch fresh data from the server
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 

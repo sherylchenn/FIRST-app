@@ -76,6 +76,13 @@ extension SearchContainerDelegate where Self: ContainerViewController {
         }
     }
 
+    func grantSelected(_ grant: Grant) {
+        // Open the grant application link
+        if let url = URL(string: grant.applicationLink) {
+            urlOpener.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
 }
 
 

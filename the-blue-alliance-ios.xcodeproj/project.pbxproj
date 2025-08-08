@@ -242,12 +242,12 @@
 		92FFE5271E7C9A1F0037E48C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFE5261E7C9A1F0037E48C /* EventTableViewCell.swift */; };
 		A6544CF021DC3CDC00D423F2 /* MatchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6544CEF21DC3CDC00D423F2 /* MatchViewModelTests.swift */; };
 		D105BC4723E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105BC4623E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift */; };
-		E0DD19A62E459E7D0058FDF1 /* GrantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19A12E459E7D0058FDF1 /* GrantCellViewModel.swift */; };
-		E0DD19A72E459E7D0058FDF1 /* GrantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19A22E459E7D0058FDF1 /* GrantTableViewCell.swift */; };
-		E0DD19B32E459E880058FDF1 /* Grant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19AA2E459E880058FDF1 /* Grant.swift */; };
-		E0DD19B42E459E880058FDF1 /* GrantsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19AC2E459E880058FDF1 /* GrantsContainerViewController.swift */; };
-		E0DD19B52E459E880058FDF1 /* GrantFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19AB2E459E880058FDF1 /* GrantFilterViewController.swift */; };
-		E0DD19B62E459E880058FDF1 /* GrantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19AD2E459E880058FDF1 /* GrantsViewController.swift */; };
+		E0DD19BE2E464B7A0058FDF1 /* GrantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19BC2E464B7A0058FDF1 /* GrantTableViewCell.swift */; };
+		E0DD19BF2E464B7A0058FDF1 /* GrantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19BB2E464B7A0058FDF1 /* GrantCellViewModel.swift */; };
+		E0DD19C52E464B880058FDF1 /* Grant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19C02E464B880058FDF1 /* Grant.swift */; };
+		E0DD19C62E464B880058FDF1 /* GrantsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19C22E464B880058FDF1 /* GrantsContainerViewController.swift */; };
+		E0DD19C72E464B880058FDF1 /* GrantFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19C12E464B880058FDF1 /* GrantFilterViewController.swift */; };
+		E0DD19C82E464B880058FDF1 /* GrantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19C32E464B880058FDF1 /* GrantsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -510,12 +510,12 @@
 		92FFE5261E7C9A1F0037E48C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A6544CEF21DC3CDC00D423F2 /* MatchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModelTests.swift; sourceTree = "<group>"; };
 		D105BC4623E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBreakdownConfigurator2020.swift; sourceTree = "<group>"; };
-		E0DD19A12E459E7D0058FDF1 /* GrantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantCellViewModel.swift; sourceTree = "<group>"; };
-		E0DD19A22E459E7D0058FDF1 /* GrantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantTableViewCell.swift; sourceTree = "<group>"; };
-		E0DD19AA2E459E880058FDF1 /* Grant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grant.swift; sourceTree = "<group>"; };
-		E0DD19AB2E459E880058FDF1 /* GrantFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantFilterViewController.swift; sourceTree = "<group>"; };
-		E0DD19AC2E459E880058FDF1 /* GrantsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsContainerViewController.swift; sourceTree = "<group>"; };
-		E0DD19AD2E459E880058FDF1 /* GrantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsViewController.swift; sourceTree = "<group>"; };
+		E0DD19BB2E464B7A0058FDF1 /* GrantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantCellViewModel.swift; sourceTree = "<group>"; };
+		E0DD19BC2E464B7A0058FDF1 /* GrantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantTableViewCell.swift; sourceTree = "<group>"; };
+		E0DD19C02E464B880058FDF1 /* Grant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grant.swift; sourceTree = "<group>"; };
+		E0DD19C12E464B880058FDF1 /* GrantFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantFilterViewController.swift; sourceTree = "<group>"; };
+		E0DD19C22E464B880058FDF1 /* GrantsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsContainerViewController.swift; sourceTree = "<group>"; };
+		E0DD19C32E464B880058FDF1 /* GrantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -876,7 +876,7 @@
 		92942DAD1E215722008E79CA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E0DD19AE2E459E880058FDF1 /* Grants */,
+				E0DD19C42E464B880058FDF1 /* Grants */,
 				92CAF54C240774A80078CA0A /* Root */,
 				92AF73D621EB9E10006A338D /* Search */,
 				92942E311E230340008E79CA /* Base */,
@@ -1369,7 +1369,7 @@
 		92FFE5221E7C994B0037E48C /* ViewElements */ = {
 			isa = PBXGroup;
 			children = (
-				E0DD19A32E459E7D0058FDF1 /* Grants */,
+				E0DD19BD2E464B7A0058FDF1 /* Grants */,
 				92B55628215FCB0900C1D9A3 /* Protocols */,
 				929DB38A209563E800FB575F /* Base */,
 				92564C69216180470047917F /* Media */,
@@ -1411,22 +1411,22 @@
 			path = Match;
 			sourceTree = "<group>";
 		};
-		E0DD19A32E459E7D0058FDF1 /* Grants */ = {
+		E0DD19BD2E464B7A0058FDF1 /* Grants */ = {
 			isa = PBXGroup;
 			children = (
-				E0DD19A12E459E7D0058FDF1 /* GrantCellViewModel.swift */,
-				E0DD19A22E459E7D0058FDF1 /* GrantTableViewCell.swift */,
+				E0DD19BB2E464B7A0058FDF1 /* GrantCellViewModel.swift */,
+				E0DD19BC2E464B7A0058FDF1 /* GrantTableViewCell.swift */,
 			);
 			path = Grants;
 			sourceTree = "<group>";
 		};
-		E0DD19AE2E459E880058FDF1 /* Grants */ = {
+		E0DD19C42E464B880058FDF1 /* Grants */ = {
 			isa = PBXGroup;
 			children = (
-				E0DD19AA2E459E880058FDF1 /* Grant.swift */,
-				E0DD19AB2E459E880058FDF1 /* GrantFilterViewController.swift */,
-				E0DD19AC2E459E880058FDF1 /* GrantsContainerViewController.swift */,
-				E0DD19AD2E459E880058FDF1 /* GrantsViewController.swift */,
+				E0DD19C02E464B880058FDF1 /* Grant.swift */,
+				E0DD19C12E464B880058FDF1 /* GrantFilterViewController.swift */,
+				E0DD19C22E464B880058FDF1 /* GrantsContainerViewController.swift */,
+				E0DD19C32E464B880058FDF1 /* GrantsViewController.swift */,
 			);
 			path = Grants;
 			sourceTree = "<group>";
@@ -1716,6 +1716,8 @@
 				924602AB1ECE8B1D0030EDBF /* AwardTableViewCell.swift in Sources */,
 				921F609923CD4DFD00FE633B /* MatchBreakdownView.swift in Sources */,
 				92D855D71EC695C400572F27 /* TeamTableViewCell.swift in Sources */,
+				E0DD19BE2E464B7A0058FDF1 /* GrantTableViewCell.swift in Sources */,
+				E0DD19BF2E464B7A0058FDF1 /* GrantCellViewModel.swift in Sources */,
 				927246C32AFFFC9300EF7796 /* AuthHelper.swift in Sources */,
 				92FF110821A61AF6003BC5C4 /* EventDistrictPointsViewController.swift in Sources */,
 				921D0B5F222B13480056578A /* ContainerViewController+Team.swift in Sources */,
@@ -1746,8 +1748,6 @@
 				9275957521B7519C00560D81 /* EventTeamsViewController.swift in Sources */,
 				928EF686222E026E00A75DDF /* MatchQueryOptionsViewController.swift in Sources */,
 				304ED0421EF1D2D300E31791 /* RankingTableViewCell.swift in Sources */,
-				E0DD19A62E459E7D0058FDF1 /* GrantCellViewModel.swift in Sources */,
-				E0DD19A72E459E7D0058FDF1 /* GrantTableViewCell.swift in Sources */,
 				14F51704239AA70A00D9240F /* SearchService.swift in Sources */,
 				92B55625215D69DE00C1D9A3 /* WeekEventsViewController.swift in Sources */,
 				92D855D21EC68F3800572F27 /* TeamsContainerViewController.swift in Sources */,
@@ -1798,10 +1798,10 @@
 				92FF111721A61B37003BC5C4 /* DistrictTeamSummaryViewController.swift in Sources */,
 				929FCD981EC7F51B00A38E46 /* DistrictsContainerViewController.swift in Sources */,
 				9263922827F0FD71003C302A /* MatchBreakdownConfigurator2022.swift in Sources */,
-				E0DD19B32E459E880058FDF1 /* Grant.swift in Sources */,
-				E0DD19B42E459E880058FDF1 /* GrantsContainerViewController.swift in Sources */,
-				E0DD19B52E459E880058FDF1 /* GrantFilterViewController.swift in Sources */,
-				E0DD19B62E459E880058FDF1 /* GrantsViewController.swift in Sources */,
+				E0DD19C52E464B880058FDF1 /* Grant.swift in Sources */,
+				E0DD19C62E464B880058FDF1 /* GrantsContainerViewController.swift in Sources */,
+				E0DD19C72E464B880058FDF1 /* GrantFilterViewController.swift in Sources */,
+				E0DD19C82E464B880058FDF1 /* GrantsViewController.swift in Sources */,
 				14796944215EAF7A0075AF4E /* TeamCellViewModel.swift in Sources */,
 				371D9C9D2BA608EC00341829 /* MatchBreakdownConfigurator2024.swift in Sources */,
 				92B07371235CB47800967FC3 /* TableViewDataSourceFetchedResultsController.swift in Sources */,
