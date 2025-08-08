@@ -14,6 +14,7 @@ enum RootType: CaseIterable {
     case events
     case teams
     case districts
+    case grants
     case myTBA
     case settings
 
@@ -25,6 +26,8 @@ enum RootType: CaseIterable {
             return "Teams"
         case .districts:
             return "Districts"
+        case .grants:
+            return "Grants"
         case .myTBA:
             return "myTBA"
         case .settings:
@@ -40,6 +43,8 @@ enum RootType: CaseIterable {
             return UIImage.teamIcon
         case .districts:
             return UIImage.districtIcon
+        case .grants:
+            return UIImage(systemName: "dollarsign.circle")
         case .myTBA:
             return UIImage.starIcon
         case .settings:
@@ -99,6 +104,11 @@ extension RootController {
                                                 statusService: statusService,
                                                 urlOpener: urlOpener,
                                                 dependencies: dependencies)
+    }
+
+    var grantsViewController: GrantsContainerViewController {
+        return GrantsContainerViewController(urlOpener: urlOpener,
+                                             dependencies: dependencies)
     }
 
     var settingsViewController: SettingsViewController {

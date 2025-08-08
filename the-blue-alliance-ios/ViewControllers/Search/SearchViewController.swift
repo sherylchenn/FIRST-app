@@ -39,6 +39,7 @@ enum SearchSection: String {
 protocol SearchViewControllerDelegate: AnyObject {
     func eventSelected(_ event: Event)
     func teamSelected(_ team: Team)
+    func grantSelected(_ grant: Grant)
 }
 
 class SearchViewController: TBATableViewController {

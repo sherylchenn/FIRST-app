@@ -193,6 +193,8 @@ extension PadMasterViewController: PadRootTableViewControllerDelegate {
                 return teamsViewController
             case .districts:
                 return districtsViewController
+            case .grants:
+                return grantsViewController
             case .myTBA:
                 return myTBAViewController
             case .settings:

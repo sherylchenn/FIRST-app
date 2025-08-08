@@ -31,7 +31,7 @@ class PhoneRootViewController: UITabBarController, RootController {
 
         super.init(nibName: nil, bundle: nil)
 
-        viewControllers = [eventsViewController, teamsViewController, districtsViewController, myTBAViewController, settingsViewController].compactMap({ (viewController) -> UIViewController? in
+        viewControllers = [eventsViewController, teamsViewController, districtsViewController, grantsViewController, myTBAViewController, settingsViewController].compactMap({ (viewController) -> UIViewController? in
             return UINavigationController(rootViewController: viewController)
         })
     }
@@ -85,6 +85,14 @@ class PhoneRootViewController: UITabBarController, RootController {
             return false
         }
         searchContainerViewController.teamSelected(team)
+        return true
+    }
+
+    func show(grant: Grant) -> Bool {
+        guard let searchContainerViewController = show(index: 3) else {
+            return false
+        }
+        searchContainerViewController.grantSelected(grant)
         return true
     }
 
