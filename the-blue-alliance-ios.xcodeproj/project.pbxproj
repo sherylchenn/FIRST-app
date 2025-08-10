@@ -242,6 +242,7 @@
 		92FFE5271E7C9A1F0037E48C /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FFE5261E7C9A1F0037E48C /* EventTableViewCell.swift */; };
 		A6544CF021DC3CDC00D423F2 /* MatchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6544CEF21DC3CDC00D423F2 /* MatchViewModelTests.swift */; };
 		D105BC4723E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105BC4623E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift */; };
+		E085C5A02E48717700D29742 /* PhoneMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E085C59F2E48717700D29742 /* PhoneMoreViewController.swift */; };
 		E0DD19BE2E464B7A0058FDF1 /* GrantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19BC2E464B7A0058FDF1 /* GrantTableViewCell.swift */; };
 		E0DD19BF2E464B7A0058FDF1 /* GrantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19BB2E464B7A0058FDF1 /* GrantCellViewModel.swift */; };
 		E0DD19C52E464B880058FDF1 /* Grant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD19C02E464B880058FDF1 /* Grant.swift */; };
@@ -510,6 +511,7 @@
 		92FFE5261E7C9A1F0037E48C /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A6544CEF21DC3CDC00D423F2 /* MatchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModelTests.swift; sourceTree = "<group>"; };
 		D105BC4623E5BF1E00378CB5 /* MatchBreakdownConfigurator2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBreakdownConfigurator2020.swift; sourceTree = "<group>"; };
+		E085C59F2E48717700D29742 /* PhoneMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneMoreViewController.swift; sourceTree = "<group>"; };
 		E0DD19BB2E464B7A0058FDF1 /* GrantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantCellViewModel.swift; sourceTree = "<group>"; };
 		E0DD19BC2E464B7A0058FDF1 /* GrantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantTableViewCell.swift; sourceTree = "<group>"; };
 		E0DD19C02E464B880058FDF1 /* Grant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grant.swift; sourceTree = "<group>"; };
@@ -1192,6 +1194,7 @@
 		92CAF54C240774A80078CA0A /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				E085C59F2E48717700D29742 /* PhoneMoreViewController.swift */,
 				921DD67C241D3D6C00403192 /* RootController.swift */,
 				92CAF54D240774B90078CA0A /* PadRootViewController.swift */,
 				92CAF54F240775180078CA0A /* PhoneRootViewController.swift */,
@@ -1803,6 +1806,7 @@
 				E0DD19C72E464B880058FDF1 /* GrantFilterViewController.swift in Sources */,
 				E0DD19C82E464B880058FDF1 /* GrantsViewController.swift in Sources */,
 				14796944215EAF7A0075AF4E /* TeamCellViewModel.swift in Sources */,
+				E085C5A02E48717700D29742 /* PhoneMoreViewController.swift in Sources */,
 				371D9C9D2BA608EC00341829 /* MatchBreakdownConfigurator2024.swift in Sources */,
 				92B07371235CB47800967FC3 /* TableViewDataSourceFetchedResultsController.swift in Sources */,
 				92FA4D2D228606BB00030BA3 /* TeamHeaderView.swift in Sources */,

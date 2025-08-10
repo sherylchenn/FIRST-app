@@ -26,6 +26,10 @@ class GrantsContainerViewController: ContainerViewController {
         // Store reference to the grants view controller
         self.grantsViewController = grantsVC
         self.grantsViewController.delegate = self
+        
+        // Set tab bar item properties
+        title = "Grants"
+        tabBarItem.image = UIImage(systemName: "dollarsign.circle")
     }
     
     required init?(coder aDecoder: NSCoder) {

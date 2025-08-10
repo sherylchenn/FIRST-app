@@ -10,13 +10,14 @@ protocol RootChildController {
     var rootType: RootType { get }
 }
 
-enum RootType: CaseIterable {
-    case events
-    case teams
-    case districts
-    case grants
-    case myTBA
-    case settings
+enum RootType: Int, CaseIterable {
+    case events = 0
+    case teams = 1
+    case districts = 2
+    case grants = 3
+    case more = 4
+    case myTBA = 5
+    case settings = 6
 
     var title: String {
         switch self {
@@ -26,6 +27,8 @@ enum RootType: CaseIterable {
             return "Teams"
         case .districts:
             return "Districts"
+        case .more:
+            return "More"
         case .grants:
             return "Grants"
         case .myTBA:
@@ -43,6 +46,8 @@ enum RootType: CaseIterable {
             return UIImage.teamIcon
         case .districts:
             return UIImage.districtIcon
+        case .more:
+            return UIImage(systemName: "ellipsis.circle")
         case .grants:
             return UIImage(systemName: "dollarsign.circle")
         case .myTBA:
@@ -53,8 +58,12 @@ enum RootType: CaseIterable {
     }
 
     var supportsPush: Bool {
-        // Settings is currently the only VC that doesn't support a sub-menu push
-        return self != .settings
+        switch self {
+        case .events, .teams, .districts, .grants:
+            return true
+        case .more, .myTBA, .settings:
+            return false
+        }
     }
 
 }

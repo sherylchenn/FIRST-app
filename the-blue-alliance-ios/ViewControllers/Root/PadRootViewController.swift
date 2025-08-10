@@ -199,6 +199,20 @@ extension PadMasterViewController: PadRootTableViewControllerDelegate {
                 return myTBAViewController
             case .settings:
                 return settingsViewController
+            case .more:
+                // For iPad, create a container that shows the more options
+                let moreViewController = PhoneMoreViewController(
+                    fcmTokenProvider: fcmTokenProvider,
+                    myTBA: myTBA,
+                    pasteboard: pasteboard,
+                    photoLibrary: photoLibrary,
+                    pushService: pushService,
+                    searchService: searchService,
+                    statusService: statusService,
+                    urlOpener: urlOpener,
+                    dependencies: dependencies
+                )
+                return moreViewController
             }
         }()
 

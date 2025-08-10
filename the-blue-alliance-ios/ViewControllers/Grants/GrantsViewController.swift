@@ -50,8 +50,7 @@ class GrantsViewController: TBATableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         
-        // Ensure delegate is set
-        tableView.delegate = self
+        // Ensure dataSource is set (delegate is already set in TBATableViewController)
         tableView.dataSource = self
     }
     
@@ -104,10 +103,7 @@ class GrantsViewController: TBATableViewController {
             return true
         }
         
-        // Use main queue for UI updates
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
     
     // MARK: - UITableViewDataSource
@@ -120,7 +116,7 @@ class GrantsViewController: TBATableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Add bounds checking
+        // Safety check to prevent crashes
         guard indexPath.row < filteredGrants.count else {
             return UITableViewCell()
         }
@@ -128,10 +124,8 @@ class GrantsViewController: TBATableViewController {
         let cell = tableView.dequeueReusableCell(indexPath: indexPath) as GrantTableViewCell
         let grant = filteredGrants[indexPath.row]
         
-        // Configure cell on main queue
-        DispatchQueue.main.async {
-            cell.viewModel = GrantCellViewModel(grant: grant)
-        }
+        // Configure cell safely
+        cell.viewModel = GrantCellViewModel(grant: grant)
         
         return cell
     }
@@ -140,7 +134,7 @@ class GrantsViewController: TBATableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        // Add bounds checking
+        // Safety check to prevent crashes
         guard indexPath.row < filteredGrants.count else {
             return
         }
@@ -150,7 +144,7 @@ class GrantsViewController: TBATableViewController {
     }
 }
 
-// MARK: - Refreshable
+// MARK: - Refreshable (Minimal implementation)
 extension GrantsViewController: Refreshable {
     
     var refreshKey: String? {
@@ -170,11 +164,8 @@ extension GrantsViewController: Refreshable {
     }
     
     func refresh() {
-        // For now, just reload the data
-        // In a real implementation, this would fetch fresh data from the server
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
+        // Simple refresh - just reload the table
+        tableView.reloadData()
     }
 }
 

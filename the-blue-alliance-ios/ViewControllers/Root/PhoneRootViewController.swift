@@ -31,13 +31,32 @@ class PhoneRootViewController: UITabBarController, RootController {
 
         super.init(nibName: nil, bundle: nil)
 
-        viewControllers = [eventsViewController, teamsViewController, districtsViewController, grantsViewController, myTBAViewController, settingsViewController].compactMap({ (viewController) -> UIViewController? in
+        // Create view controllers in the correct order for 5 tabs
+        let viewControllers = [eventsViewController, teamsViewController, districtsViewController, grantsViewController, moreViewController].compactMap({ (viewController) -> UIViewController? in
             return UINavigationController(rootViewController: viewController)
         })
+        
+        self.viewControllers = viewControllers
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private Properties
+    
+    private var moreViewController: PhoneMoreViewController {
+        return PhoneMoreViewController(
+            fcmTokenProvider: fcmTokenProvider,
+            myTBA: myTBA,
+            pasteboard: pasteboard,
+            photoLibrary: photoLibrary,
+            pushService: pushService,
+            searchService: searchService,
+            statusService: statusService,
+            urlOpener: urlOpener,
+            dependencies: dependencies
+        )
     }
 
     // MARK: - RootController
@@ -89,10 +108,12 @@ class PhoneRootViewController: UITabBarController, RootController {
     }
 
     func show(grant: Grant) -> Bool {
-        guard let searchContainerViewController = show(index: 3) else {
+        // Switch to Grants tab
+        selectedIndex = 3
+        guard let navigationController = selectedViewController as? UINavigationController else {
             return false
         }
-        searchContainerViewController.grantSelected(grant)
+        navigationController.popToRootViewController(animated: false)
         return true
     }
 
