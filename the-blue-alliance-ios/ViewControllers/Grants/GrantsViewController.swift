@@ -46,12 +46,14 @@ class GrantsViewController: TBATableViewController {
     
     // MARK: - Setup
     private func setupTableView() {
+        // Register the cell
         tableView.registerReusableCell(GrantTableViewCell.self)
+        
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 80
         
-        // Ensure dataSource is set (delegate is already set in TBATableViewController)
-        tableView.dataSource = self
+        // DataSource is already set in TBATableViewController
+        // Delegate is already set in TBATableViewController
     }
     
     private func setupNavigationBar() {
@@ -69,6 +71,7 @@ class GrantsViewController: TBATableViewController {
         
         let nav = UINavigationController(rootViewController: filterViewController)
         nav.modalPresentationStyle = .formSheet
+        
         present(nav, animated: true)
     }
     
@@ -118,7 +121,10 @@ class GrantsViewController: TBATableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Safety check to prevent crashes
         guard indexPath.row < filteredGrants.count else {
-            return UITableViewCell()
+            // Return a default cell if index is out of bounds
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "DefaultCell")
+            cell.textLabel?.text = "Error loading grant"
+            return cell
         }
         
         let cell = tableView.dequeueReusableCell(indexPath: indexPath) as GrantTableViewCell
@@ -140,6 +146,7 @@ class GrantsViewController: TBATableViewController {
         }
         
         let grant = filteredGrants[indexPath.row]
+        
         delegate?.grantSelected(grant)
     }
 }
@@ -163,9 +170,17 @@ extension GrantsViewController: Refreshable {
         return filteredGrants.isEmpty
     }
     
-    func refresh() {
-        // Simple refresh - just reload the table
-        tableView.reloadData()
+    @objc func refresh() {
+        // Ensure we're on the main thread for UI updates
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            // Reload the table data safely
+            self.tableView.reloadData()
+            
+            // End the refresh control if it's active
+            self.refreshControl?.endRefreshing()
+        }
     }
 }
 

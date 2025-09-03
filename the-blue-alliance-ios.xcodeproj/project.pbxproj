@@ -24,11 +24,7 @@
 		371D9C9D2BA608EC00341829 /* MatchBreakdownConfigurator2024.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D9C9C2BA608EC00341829 /* MatchBreakdownConfigurator2024.swift */; };
 		92009B5723DD49A60058E567 /* HandoffServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92009B5623DD49A60058E567 /* HandoffServiceTests.swift */; };
 		920240072AEB6AAD0003D118 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 920240062AEB6AAD0003D118 /* PureLayout */; };
-		920240092AEB6AC30003D118 /* TBAOperation in Frameworks */ = {isa = PBXBuildFile; productRef = 920240082AEB6AC30003D118 /* TBAOperation */; };
-		9202400B2AEB6ACF0003D118 /* Search in Frameworks */ = {isa = PBXBuildFile; productRef = 9202400A2AEB6ACF0003D118 /* Search */; };
-		9202400D2AEB6ADC0003D118 /* MyTBAKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9202400C2AEB6ADC0003D118 /* MyTBAKit */; };
-		9202400F2AEB6ADC0003D118 /* TBAKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9202400E2AEB6ADC0003D118 /* TBAKit */; };
-		920240112AEB6AE60003D118 /* TBAData in Frameworks */ = {isa = PBXBuildFile; productRef = 920240102AEB6AE60003D118 /* TBAData */; };
+
 		9204401526D2B65D00B94661 /* Search in Frameworks */ = {isa = PBXBuildFile; productRef = 9204401426D2B65D00B94661 /* Search */; };
 		9204401726D2B68A00B94661 /* TBAData in Frameworks */ = {isa = PBXBuildFile; productRef = 9204401626D2B68A00B94661 /* TBAData */; };
 		921843032DB42424003B4F9E /* TBAAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 921843022DB42424003B4F9E /* TBAAPI */; };
@@ -1482,18 +1478,13 @@
 				924BDD9126D2B366008BE7D2 /* FirebaseRemoteConfig */,
 				924BDD9426D2B391008BE7D2 /* GoogleSignIn */,
 				920240062AEB6AAD0003D118 /* PureLayout */,
-				920240082AEB6AC30003D118 /* TBAOperation */,
-				9202400A2AEB6ACF0003D118 /* Search */,
-				9202400C2AEB6ADC0003D118 /* MyTBAKit */,
-				9202400E2AEB6ADC0003D118 /* TBAKit */,
-				920240102AEB6AE60003D118 /* TBAData */,
+				92F63EA62BA91BFB0025CC03 /* TBAOperation */,
+				92F63E9D2BA91BCA0025CC03 /* Search */,
+				92F63E9A2BA91B4F0025CC03 /* MyTBAKit */,
+				92F63EA32BA91BEC0025CC03 /* TBAKit */,
+				92F63EA02BA91BD80025CC03 /* TBAData */,
 				92C5FBDB2B0037E10006AE48 /* YouTubeiOSPlayerHelper */,
 				92C5FBDE2B0038250006AE48 /* Agrume */,
-				92F63E9A2BA91B4F0025CC03 /* MyTBAKit */,
-				92F63E9D2BA91BCA0025CC03 /* Search */,
-				92F63EA02BA91BD80025CC03 /* TBAData */,
-				92F63EA32BA91BEC0025CC03 /* TBAKit */,
-				92F63EA62BA91BFB0025CC03 /* TBAOperation */,
 				92F63EA92BA91C070025CC03 /* TBAProtocols */,
 				92F63EAC2BA91C170025CC03 /* TBAUtils */,
 				921843022DB42424003B4F9E /* TBAAPI */,
@@ -2338,26 +2329,7 @@
 			package = 92B3217D26ED1A79003B28DC /* XCRemoteSwiftPackageReference "PureLayout" */;
 			productName = PureLayout;
 		};
-		920240082AEB6AC30003D118 /* TBAOperation */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TBAOperation;
-		};
-		9202400A2AEB6ACF0003D118 /* Search */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Search;
-		};
-		9202400C2AEB6ADC0003D118 /* MyTBAKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = MyTBAKit;
-		};
-		9202400E2AEB6ADC0003D118 /* TBAKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TBAKit;
-		};
-		920240102AEB6AE60003D118 /* TBAData */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TBAData;
-		};
+
 		9204401426D2B65D00B94661 /* Search */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Search;
